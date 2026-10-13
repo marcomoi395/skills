@@ -26,12 +26,15 @@ Look for opportunities to prefactor the code to make the implementation easier. 
 
 Break the work into **tracer bullet** tickets.
 
+Before slicing, extract a source ledger of every spec commitment: behavior, invariant, architecture decision, non-goal, compatibility constraint, security or privacy constraint, performance expectation, rollout constraint, and validation requirement. Carry each applicable commitment into the ticket that owns it.
+
 <vertical-slice-rules>
 
 - Each slice cuts a narrow but COMPLETE path through every layer (schema, API, UI, tests): vertical, NOT a horizontal slice of one layer
 - A completed slice is demoable or verifiable on its own
 - Each slice is sized to fit in a single fresh context window
 - Any prefactoring should be done first
+- Every user-facing outcome and every connective path has exactly one owning ticket. A prep or refactor ticket must name the later outcome ticket that closes its deferred path.
 
 </vertical-slice-rules>
 
@@ -74,6 +77,12 @@ Do NOT close or modify any parent issue.
 
 **Blocked by:** the numbers/titles of the tickets that gate this one, or "None (can start immediately)".
 
+**Spec commitments carried:** the source commitments this ticket preserves.
+
+**Surface claims:** owned, read, and written capabilities or contracts; pin shared literal and schema names.
+
+**Source spec base:** the source spec's Base commit.
+
 **Status:** ready-for-agent
 
 - [ ] Acceptance criterion 1
@@ -86,6 +95,18 @@ Do NOT close or modify any parent issue.
 ## Parent
 
 A reference to the parent issue on the tracker (if the source was an existing issue, otherwise omit this section).
+
+## Spec commitments carried
+
+- Commitment 1
+
+## Surface claims
+
+- Owns: ...
+- Reads: ...
+- Writes: ...
+- Shared names pinned: ...
+- Source spec base: ...
 
 ## What to build
 

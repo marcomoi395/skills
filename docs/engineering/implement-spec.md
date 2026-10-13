@@ -84,3 +84,7 @@ grill-with-docs → to-spec → to-tickets → implement-spec → retro
 ```
 
 Its neighbours are [to-tickets](https://aihero.dev/skills-to-tickets), which declares the blocking edges it reads as a task graph, and [code-review](https://aihero.dev/skills-code-review), which it runs over the integration branch before closing out. [ask-matt](https://aihero.dev/skills-ask-matt) is the router over the whole set when you are not sure which flow you are in.
+
+## Parallel safety
+
+Validate ticket bases, commitments, and surface claims before dispatch. After every merge, append a `Landed` section listing changed exports, signatures, schemas, literals, and deleted files, then recheck open specs whose claims overlap. Tickets sharing a write surface run serially. Recompute the frontier from the integration branch and landed work, not tracker status alone.

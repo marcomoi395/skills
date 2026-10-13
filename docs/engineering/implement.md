@@ -95,3 +95,7 @@ Its neighbours are [to-tickets](https://aihero.dev/skills-to-tickets), which pro
 That trust is why [wayfinder](https://aihero.dev/skills-wayfinder) merges onto the chain at [to-spec](https://aihero.dev/skills-to-spec) rather than looping its map straight into `implement`. Go straight to `implement` from a map only when the effort turned out small.
 
 [ask-matt](https://aihero.dev/skills-ask-matt) is the router over the whole set when you are not sure which flow you are in.
+
+## Input freshness gate
+
+Before coding, read the source spec and ticket commitments, surface claims, and source base commit. Compare the current branch with that base and inspect relevant changes. A `STALE` or `CONFLICT` result stops implementation until the ticket is reconciled or serialized.

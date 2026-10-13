@@ -12,6 +12,8 @@ The issue tracker and triage label vocabulary should have been provided to you. 
 
 1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the spec, and respect any ADRs in the area you're touching.
 
+   Record the commit inspected with `git rev-parse HEAD` and whether the working tree is clean. Search the configured tracker for open work touching the same capability. Record related specs, their status, and any overlap before drafting.
+
 2. Sketch out the seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can. The fewer seams across the codebase, the better - the ideal number is one.
 
 Check with the user that these seams match their expectations.
@@ -24,9 +26,50 @@ Check with the user that these seams match their expectations.
 
 The problem that the user is facing, from the user's perspective.
 
+## Spec Metadata
+
+- ID: a stable spec identifier
+- Base commit: the commit inspected while writing this spec
+- Created at: UTC timestamp
+- Working tree: clean or dirty
+- Persistence: flow-forward, living, or flow-back
+- Extends/supersedes: related spec identifiers, or none
+
 ## Solution
 
 The solution to the problem, from the user's perspective.
+
+## Current State and Change Boundary
+
+### Retained
+
+Existing behavior that must remain.
+
+### Modified
+
+Existing behavior that changes.
+
+### Added
+
+New behavior.
+
+### Explicitly unchanged
+
+Related behavior that this spec must not change.
+
+## Requirement Claims
+
+- Owns: capabilities or requirement identifiers this spec changes
+- Reads: shared capabilities it relies on
+- Writes: shared capabilities, files, or contracts it changes
+- Public surfaces: APIs, schemas, events, config, or message keys
+- Explicitly unchanged: claims that must remain stable
+
+## Freshness Check
+
+- Related specs and tracker work checked: ...
+- Overlap or conflict found: none, or describe it
+- Recheck required before implementation: yes
 
 ## User Stories
 

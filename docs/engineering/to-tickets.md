@@ -97,3 +97,7 @@ grill-with-docs → to-spec → to-tickets → implement → code-review → ret
 ```
 
 Upstream is [to-spec](https://aihero.dev/skills-to-spec), which hands it a settled spec to slice against. Keep both in one context window, with no clear between them. Downstream is [implement](https://aihero.dev/skills-implement), which builds one ticket per fresh session, driving [tdd](https://aihero.dev/skills-tdd) for the tests and closing with [code-review](https://aihero.dev/skills-code-review). [implement-spec](https://aihero.dev/skills-implement-spec) is the other way down. It reads the same blocking edges as a task graph and builds every ready ticket in parallel on one integration branch. When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
+
+## Spec commitments and shared surfaces
+
+Before slicing, extract the source commitments and carry each applicable commitment into its owning ticket. Each ticket also records its owned, read, and written surfaces, pinned shared names, and the source spec base commit. A commitment or connective path without an owning ticket blocks publication. Tickets with the same shared write surface run serially.

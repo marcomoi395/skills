@@ -79,3 +79,7 @@ grill-with-docs → to-spec → to-tickets → implement → code-review → ret
 ```
 
 Upstream, [grill-with-docs](https://aihero.dev/skills-grill-with-docs) makes the decisions that this skill only records, and a finished [wayfinder](https://aihero.dev/skills-wayfinder) map joins the chain here. Downstream, [to-tickets](https://aihero.dev/skills-to-tickets) cuts the spec into tracer-bullet tickets for [implement](https://aihero.dev/skills-implement) to build. When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
+
+## Freshness and overlap
+
+Every published spec records the inspected `Base commit`, persistence model, related specs, and `Requirement Claims`. Claims name capabilities and contracts the spec owns, reads, or writes. Before drafting, search the configured tracker for open work touching the same capability. For existing systems, record retained, modified, added, and explicitly unchanged behavior. Downstream implementation must recheck the base and claims before coding.
